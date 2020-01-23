@@ -3,8 +3,7 @@ package com.lambton;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class StringsExamples
-{
+public class StringsExamples {
 
     public static void main(String[] args) {
 /*
@@ -52,21 +51,36 @@ public class StringsExamples
         System.out.println(p);
 
 */
-
+        StringExamples out = new StringsExamples();
+        out.outputString("Welcome");
     }
 
-    public void outputString (String result)
-    {
+    public void outputString(String name) {
         Scanner input = new Scanner(System.in);
-        String value;
-        System.out.println("Enter your string");
-        while (input.hasNext()){
-            value = input.next();
-            
+        System.out.println("Enter your text: ");
+        name = input.nextLine();
 
+        int index_tracker = 0;
+
+        for (int i = 0; i <= name.length(); i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(name.charAt(index_tracker));
+                index_tracker++;
+
+                if (index_tracker >= name.length()) {
+                    System.out.print("");
+                    return;
+                }
+            }
+              /*  while (index_tracker <= name.length())
+                {
+                    System.out.print(name.charAt(index_tracker));
+                    index_tracker ++;
+                }
+               */
         }
-
-
-
+        System.out.println();
     }
+
 }
+
